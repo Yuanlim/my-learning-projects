@@ -1,0 +1,62 @@
+GET http://localhost:5095/Shopping/Initial
+###
+GET http://localhost:5095/Shopping/Expand/1
+###
+POST http://localhost:5095/Shopping/WishList
+Content-Type: application/json
+
+{
+    "productId": 1,
+    "Quantity": 5
+}
+###
+PATCH http://localhost:5095/Shopping/ProductChange/4
+Content-Type: application/json
+
+{
+    "ProductName" : "Wireless Mouse",
+    "PointCost" : "12500",
+    "Quantity": 3
+}
+###
+POST http://localhost:5095/Shopping/Order/Placed/
+###
+POST http://localhost:5095/Shopping/newProduct/
+Content-Type: application/json
+
+{
+    "ProductName" : "Mouse",
+    "ProductImageRoot" : "../Example4",
+    "Description" : "Bluetooth + Rechargable",
+    "PointCost" : 10000,
+    "Quantity" : 2
+}
+###
+DELETE http://localhost:5095/Shopping/Product/Remove/3
+###
+POST http://localhost:5095/Shopping/newProduct/
+Content-Type: application/json
+
+{
+    "ProductName" : "Ice cream box",
+    "ProductImageRoot" : "../Example5",
+    "Description" : "Vanilla + Chocolate (12 inside)",
+    "PointCost" : 10,
+    "Quantity" : 2
+}
+###
+POST http://localhost:5095/Shopping/Order/Cancel/1&1
+
+###
+PATCH http://localhost:5095/Shopping/Order/Received
+Content-Type: application/json
+
+{
+    "OrderId" : 1,
+    "EntireOrder" : true
+}
+###
+GET http://localhost:5095/Shopping/AllIdOrderList/F384729123
+
+###
+Get http://localhost:5095/Shopping/Product/Get/1

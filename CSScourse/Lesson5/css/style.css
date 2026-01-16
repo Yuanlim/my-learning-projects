@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box; /* content-box when absolute value was set, only account that element. Border-box includes padding boarder to the consideration*/
+}
+
+/* h1 {
+  border: 2px dashed red;
+  width: 400px;
+  font-size: 2rem;
+  padding: 0.5em;
+} */
+
+.container {
+  border: dashed red;
+  border-top: 6px solid black;
+  border-right: 5px dotted orange;
+  border-bottom: 8px double blue;
+  border-left: 2px outset olivedrab;
+  border-top-color: chartreuse;
+  border-top-style: inset;
+  font-size: 1.5rem;
+  padding: 1.5em; /*2.25 rem*/
+  /* margin: 1.5em; */
+  /* margin-top: 1.5em;
+  margin-right: 2em;
+  margin-left: 2em;
+  margin-bottom: 1.5em; */
+  margin: 1.5em 2em; /* 1.5 apply to top and bottom, 2 apply to left and right
+  /* up left down right */
+  /* padding: 1.5em 3em 6em 12em; */
+  outline: 5px solid black; /*rapping outside the box*/
+  outline-offset: 3px; /* how much distance from the box, can be negative which is inside*/
+}
+
+.circle {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  margin: 1.5rem auto; /*auto: auto center by example left right center*/
+  border: 2px solid black;
+  outline-offset: 0.25rem;
+  outline: 2px solid black;
+  border-radius: 50px;
+}

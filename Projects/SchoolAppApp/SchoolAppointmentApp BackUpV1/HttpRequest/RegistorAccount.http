@@ -1,0 +1,26 @@
+POST http://localhost:5095/Register
+Content-Type: application/json
+
+{
+    "Role" : "teacher",
+    "Id" : "F084729123",
+    "Name" : "Name",
+    "Password" : "What",
+    "Email" : "test2@gmail.com",
+    "PhoneNumber" : "735654635",
+    "Class" : "電通一甲"
+}
+
+###
+POST http://localhost:5095/Register
+Content-Type: application/json
+
+{
+    "Role" : "student",
+    "Id" : "C184729123",
+    "Name" : "Name",
+    "Password" : "What",
+    "Email" : "test1@gmail.com",
+    "PhoneNumber" : "245654635",
+    "Class" : "電通一甲"
+}

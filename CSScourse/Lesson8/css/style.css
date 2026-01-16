@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+  font-family: monospace;
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+/*Topic changing list presentation*/
+
+ol {
+  padding: 0;
+  /* style presented */ 
+  list-style-type: circle; /* o */
+  list-style-type: decimal; /* defualt 1,2...*/
+  list-style-type: disc; /* filled dot */
+  list-style-type: georgian; /* ??? */
+  list-style-type: lower-alpha; /* a,b,... */
+  list-style-type: lower-greek; /* α,β,γ... */
+  list-style-type: armenian; /* ??? */
+  list-style-type: upper-alpha; /* A,B,... */
+  list-style-type: decimal-leading-zero; /*01,02,...*/
+  /* list-style-image: url(../img/queen.png); */
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  text-align: left;
+  color: brown;
+}
+
+ul {
+  padding: 0;
+  list-style-type: square;
+  list-style: circle inside;
+  line-height: 1.6;
+}
+
+/* li {
+  color:red;
+} */
+
+/*only changes unorder list second list*/
+ul li:nth-child(2) {
+  color: red;
+}
+
+/*only changes unorder list odd once in list*/
+ul li:nth-child(odd) {
+  color: blue;
+}
+
+/*only changes the bullet*/
+ul ::marker {
+  color: black;
+  font-family: fantasy;
+  font-size: 1em;
+  content: "Only $5 >>";
+}

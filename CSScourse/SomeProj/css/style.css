@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root { --header-h: 60px; } 
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+}
+
+section[id], [id] { scroll-margin-top: var(--header-h); }
+
+html,
+body {
+  width: auto !important;
+  width: 100%;
+  min-height: 500vh;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.TopHeader {
+  padding-top: 0.25rem;
+  width: 100%;
+  height: var(--header-h);
+  background-color: hsla(0, 0%, 0%, 0.449);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: " lc tbnc ";
+  align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.LogoContainer {
+  flex: 1 1;
+  grid-area: lc;
+  display: flex;
+  align-content: center;
+  margin-left: 1rem;
+}
+
+.ShopName {
+  color: whitesmoke;
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  align-content: center;
+}
+
+.ShopLogo {
+  height: 40px;
+  width: 40px;
+  padding: 0.25rem;
+}
+
+.TopBarNavContainer {
+  flex: 1 1;
+  grid-area: tbnc;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.TopBarNav {
+  color: orange;
+  text-decoration: none;
+  align-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.LogoBackground {
+  background-color: purple;
+  border-radius: 50%;
+}
+
+.AboutContent {
+    text-indent: 2rem;
+    text-align: justify;
+}
+
+.SectionHeader {
+    padding: 1rem;
+    border: 5px solid black;
+    background-color: pink;
+}
+
+.HeaderTitle {
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .TopHeader {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "lc"
+      "tbnc";
+    height: auto; /* was 60px; allow wrapping height */
+    row-gap: 8px;
+    padding-bottom: 8px; /* optional breathing room */
+  }
+
+  /* .ShopName, .TopBarNav {
+    font-size: medium;
+  } */
+  
+  .LogoContainer {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .TopBarNavContainer {
+    display: flex; /* lay out links nicely on the new row */
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 429px) {
+  .ShopName, .TopBarNav {
+    font-size: medium;
+  }
+}

@@ -1,0 +1,8 @@
+// get id number 2
+GET http://localhost:5198/todos/2
+
+### 
+GET http://localhost:5198/games
+
+### 
+GET http://localhost:5198/genre

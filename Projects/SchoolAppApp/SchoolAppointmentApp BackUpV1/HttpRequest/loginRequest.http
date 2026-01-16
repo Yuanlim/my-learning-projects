@@ -1,0 +1,42 @@
+Post http://localhost:5095/login
+Content-Type: application/json
+
+{
+    "Role" : "teacher",
+    "Id" : "F084729123",
+    "Password" : "What"
+}
+###
+GET http://localhost:5094/__routes
+###
+Post http://localhost:5095/login
+Content-Type: application/json
+
+{
+    "Role" : "admin",
+    "Id" : "84u232fhfehw889d0ufd",
+    "Password" : "Hello world"
+}
+###
+Post http://localhost:5095/login
+Content-Type: application/json
+
+{
+    "Role" : "Principal",
+    "Id" : "L123456",
+    "Password" : "Hello world"
+}
+###
+Post http://localhost:5095/login
+Content-Type: application/json
+
+{
+    "Role" : "Student",
+    "Id" : "C484729123",
+    "Password" : "What"
+}
+###
+GET http://localhost:5095/FriendShip/FindFriend?Id=C484729123
+
+###
+GET http://localhost:5095/FriendShip/GetWithStatus?Status=Pending

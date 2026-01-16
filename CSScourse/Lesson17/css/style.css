@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+}
+
+.ProfilePictureFigure {
+  width: 35%;
+}
+
+.ProfileOverLayer {
+  border-bottom: 2px solid black;
+  height: 30%;
+  padding: 2rem;
+  gap: 30px;
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  background-color: hsla(35, 65%, 10%, 0.407);
+}
+
+.MyProfileContainer img {
+  display: block;
+  /*
+  img by defualt is inline so it does take up the hold, but still has padding at the bottom so by setting it to block. It takes up the hold height.
+  */
+  width: 100%;
+  min-width: 100px;
+  height: auto;
+  border: 4px double black;
+  border-radius: 50%;
+}
+
+.MyProfileContainer h1 {
+  font-size: 4rem;
+  white-space: nowarp;
+  color: white;
+  text-shadow: 4px 4px 2px #000;
+}
+
+
+.MyProfileContainer {
+
+  /* background-color: #000; */
+  /* when image cant be loaded the backup options.*/
+  background-image: url("../img/scenic-2200x1331.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
+}
+
+figcaption {
+  position: fixed;
+  left: -1000px;
+}
+
+/*---------------------------------------------------*/
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../img/bubbles.png), linear-gradient(to left, steelblue, white);
+  background-repeat: no-repeat repeat;
+  background-position: right;
+  background-size: 20%, auto;
+  /* represent: bubble, linear background*/
+}
+
+.clip {
+  font-size: 18rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: url(../img/scenic-2200x1331.png);
+  -webkit-background-clip: text;
+  background-size: 100%;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+
+
+
+

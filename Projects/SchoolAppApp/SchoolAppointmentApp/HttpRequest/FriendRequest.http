@@ -1,0 +1,7 @@
+POST http://localhost:5095/FriendShip/Send
+Content-Type: application/json
+
+{
+  "ToUserId" : 2,
+  "StatusId" : 1
+}

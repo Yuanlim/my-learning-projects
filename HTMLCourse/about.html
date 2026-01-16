@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Yuan" />
+    <meta name="description" content="My about page" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="icon" href="brick-wall.png" type="image/x-icons" />
+    <title>About me</title>
+  </head>
+  <body>
+    <h1>
+      <!--
+        if image is not found "alt" is printed on the screen.
+        "title" is used for mouse hover discription
+      -->
+      <a href="index.html"
+        ><img
+          src="img/return-button-icon.jpg"
+          alt="Back"
+          title="Back button"
+          width="30"
+          height="30"
+      /></a>
+      Profile
+      <img src="img/list.png" alt="profile" width="30" height="30" />
+    </h1>
+    <hr />
+    <section id="MyProfile">
+      <ol>
+        <li>
+          <h2>Graduate from:</h2>
+          <ul>
+            <li>
+              <p>
+                High School:
+                <abbr title="Pay Feng High School"
+                  ><a href="https://www.payfong.edu.my/">PFHS</a></abbr
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                University:
+                <abbr
+                  title="National Kaosiong University Science and Technology"
+                  ><a href="https://www.nkust.edu.tw/">NKUST</a></abbr
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Masters:
+                <abbr
+                  title="National Kaosiong University Science and Technology"
+                  ><a href="https://www.nkust.edu.tw/">NKUST</a>
+                </abbr>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <hr />
+          <h2>Graduate <em>Department</em>:</h2>
+          <ul>
+            <li><p>High School: Electrical and Electronic</p></li>
+            <li><p>University: Computer and Communication Engineering</p></li>
+            <li><p>Masters: Computer and Communication Engineering</p></li>
+          </ul>
+        </li>
+        <li>
+          <hr />
+          <h2>What <strong>skills</strong> I have:</h2>
+          <ul>
+            <li>
+              Python with at least 3 years experience.
+              <dl>
+                <dt>Worked Project:</dt>
+                <dd>
+                  Master's paper project: Using Qiskit building quantum circuit
+                  to approximate
+                  <abbr title="Traveling Salesman Problem"><em>TSP</em></abbr>
+                  and <em>MaxCut</em> solution
+                  <br />
+                  Computer proccessing personal project: classfication the coin
+                  and count the amount in the image. <em>(Best performance)</em>
+                  <br />
+                  Computer vision group project: re-identification.
+                  <em>(Best performance)</em>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              C/C++ with at least 2 years experience.
+              <dl>
+                <dt>Worked Project:</dt>
+                <dd>
+                  Computer graphic personal project: Using Glut to build 3D
+                  Pacman game.
+                  <em>(Best performance)</em>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              C# with at least 1 years experience.
+              <dl>
+                <dt>Worked Project:</dt>
+                <dd>
+                  Software system management planning(Realize) personal project:
+                  <em>ASP.NET</em> + <em>Angular</em> (In progress)
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <hr />
+    <ul>
+      <li>
+        Download my <a href="img/brick-wall.png" download>HTML favicon</a>
+      </li>
+      <!-- "mailto:" to add email address-->
+      <li>
+        Contact me at <a href="mailto:random@gmail.com">my email address</a>
+      </li>
+      <!-- "tel:" to add phone number-->
+      <li>Dail <a href="tel:+1234567890">my phone number</a></li>
+      <!-- hyperlink redirect, use target="_blank" to open in new tab not current tab-->
+      <li>
+        Open <a href="https://www.google.com/" target="_blank">Google</a> in a
+        new tab.
+      </li>
+    </ul>
+    <hr />
+    <!-- /{rootPath} in a tag herf to return back to home page-->
+    <p>
+      <a href="/HTMLCourse">Back to Home</a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+POST http://localhost:5095/Community/MainPost/Post
+Content-Type: application/json
+
+{
+    "Content" : "How do I cure sickness?"
+}
+###
+POST http://localhost:5095/Community/ReplyPost/Post
+Content-Type: application/json
+
+{
+    "RepliedMainPostId": 3,
+    "Content": "Depends."
+}
+
+###
+POST http://localhost:5095/Community/ThumbsUp/MainPost/
+Content-Type: application/json
+
+{
+    "MainPostId" : 3 
+}
+
+###
+GEt http://localhost:5095/Community/GetMainDiscussion?StepAmount=1&OrderBy=Date

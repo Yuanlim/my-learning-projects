@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+ font-size: 1.5rem;
+ font-family: "Bitcount Grid Single";
+ font-weight: bold;
+}
+
+.column {
+  column-count: 4; /* The content is displaying between 4 columns*/ 
+  column-width: 250px; /* Each content should be 250px in width, so when browser resize the word will not be so clamps in order to satisfy number of column counts */
+  columns: 4 250px; /* above short form*/
+  column-rule: 3px solid black; /* verticle line saperation*/
+  column-gap: 3rem; /* extra spacing between column*/
+}
+
+.column p {
+  margin-top: 0;
+  /*The first paragraph is padding on top which is weird, remove it set to margin-top = 0. THe other p tag will get influence too. Since p in defualt has a margin below. It collapse to one margin, resets top to 0 the p still have 0 margin so it just effect only the first p*/
+}
+
+.column h2 {
+  break-inside: avoid;
+  /* break-before: column; */
+  margin-top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem
+}
+
+.column .quote {
+  margin-top: 2rem;
+  font-size: 3rem;
+  column-span: all;
+}
+
+.nowraps {
+  white-space: nowrap; /* the hold span text goes together */
+}
+
+
+
+

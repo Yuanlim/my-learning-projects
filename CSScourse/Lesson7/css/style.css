@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+  font-family: monospace;
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+/*Topic when links hover, visited active and focus*/
+
+/*active means when mouse clicked  but hold. It is not release yet that means user not accidentally click, what do we do?*/
+
+a {
+  text-decoration: none; /*Take away line*/
+  cursor: crosshair; /*change pointer to different icon when hover*/
+  color: hsl(207, 44%, 49%);
+}
+
+/*sudo class of links visited propreties setup*/
+/*sudo class has more specificity than normal a class*/
+a:visited {
+  color: #b00020;
+  opacity: 0.9;
+}
+
+/*sudo class of links was hover propreties setup*/
+/*sudo class of links was tapped propreties setup*/
+a:hover, a:focus {
+  color: hsl(188, 44%, 49%);
+  background-color: gold;
+}
+
+a:active {
+  color: red
+}

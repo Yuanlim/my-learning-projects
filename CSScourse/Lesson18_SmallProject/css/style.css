@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+body {
+  font: 1.5rem "Nunito", sans-serif;
+  min-height: 100vh;
+
+  background-color: #475569;
+  background-image: radial-gradient(whitesmoke, #475569);
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  position: sticky;
+  background-color: #1e293b;
+  color: whitesmoke;
+  text-align: center;
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: #fff;
+  font-weight: bolder;
+  color: #000;
+  padding: 0.5rem;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  color: black;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+footer {
+  bottom: 0;
+}
+
+/* .ProfileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+.Profile {
+  text-align: center;
+  scroll-margin-top: 8rem;
+  width: min(100%, 350px);
+  background-color: hsla(208, 100%, 97%, 0.46);
+  padding: 1rem;
+  border: 2px solid #000;
+  border-radius: 15px;
+  /* margin: 1.5rem 1.5rem 0 1.5rem; */
+}
+
+.Profile figure{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.ProfileName {
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.ProfilePicture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 3px solid gray;
+  border-radius: 50%;
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+
+  main{
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .Profile {
+    width: min(100%, 400px);
+  }
+
+  .Profile:last-child {
+    order: -1;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+/* || MEDIUM */
+@media screen and (min-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  .Profile {
+    width: min(100%, 325px);
+  }
+
+  .Profile figure{
+    flex-flow: column-reverse;
+  }
+  
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+
+  .Profile{
+    width: min(100%, 400px);
+  }
+
+}
+
+/* || XL  */
+@media screen and (min-width: 1200px) {
+  .Profile {
+    width: min(calc(33% - 1rem), 500px);
+  }
+}
+
+/* || MOBILE DEVICE LANDSCAPE  */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  main {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+
+  .Profile {
+    width: min(calc(33%-0.25rem), 200px);
+  }
+
+  .Profile figcaption, .Profile p {
+    font-size: 1.25rem;
+  }
+}

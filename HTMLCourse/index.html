@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- For metadata -->
+  <head>
+    <!-- Metadata: data descriptor -->
+    <meta charset="UTF-8" />
+    <!-- Page char encoding -->
+    <meta name="author" content="Yuan" />
+    <meta name="descriptor" content="Learning HTML" />
+    <title>My first Web Page</title>
+    <!-- Tab name -->
+    <!--link tag: let you link external files but is not clickable-->
+    <link rel="icon" href="img/brick-wall.png" type="image/x-icons" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+  </head>
+  <body>
+    <!-- header adding section meaning to the html, usually use for navigation of the sites-->
+    <header>
+      <h1>
+        <img src="img/images.jpg" alt="Html5 icon" width="30" height="30" />
+        Hello world!
+      </h1>
+      <!--figure: can be used as warping group of text with a caption-->
+      <figure>
+        <figcaption>The above Hello World! html code.</figcaption>
+        <p>
+          <!-- Code: you can display html code using this tag, as the perfect font for displaying-->
+          <code> &lt;h1&gt; Hello World! &lt;/h1&gt; </code>
+        </p>
+      </figure>
+      <a href="about.html">About me</a>
+      <hr />
+      <h1>Content</h1>
+      <hr />
+
+      <!--nav is a tag for warping current page content navigation, use aria-label to classify the navigation-->
+      <nav aria-label="primary-navigation">
+        <ul>
+          <li>
+            <a href="#MyLearningPlan">My HTML learning plan</a>
+          </li>
+          <li>
+            <a href="#MyVacationPlan">My HTML vacation plan</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- <hr>: Add horizontal line -->
+    <hr />
+
+    <!-- main is usually a section of displaying the content -->
+    <main>
+      <article id="MyLearningPlan">
+        <h2>I'm ready to learn html</h2>
+        <p>This is my first web page</p>
+        <!-- <article>: higher than section should be main topic of section-->
+        <!-- <section>: Can help direct to a specific section -->
+        <section id="MyDailySchedule">
+          <h3>My daily schedule</h3>
+          <p>Let me tell you how:</p>
+          <!-- <br>: line break -->
+          <!-- &nbsp;: when have 2 or more white spaces, it will auto coplase into one to add more use &nbsp;-->
+          <br />
+          &nbsp;&nbsp;&nbsp;...I learn more about web dev. <br />
+          <!-- ol: define type of list as Order list 1.2.3-->
+          <ol>
+            <!-- li: list-->
+            <li>...I plan out my schedule.</li>
+            <!-- <abbr>: abbreviation(short form of something), when put this tag you specificly said that this word is short form of some longer words. And provide a description of the full word-->
+            <!-- <a>: redirect sentence to a specific link or your existing page.-->
+            <li>
+              ...I use resources from
+              <abbr title="Mozilla Developer Network">
+                <a href="https://developer.mozilla.org/">MDN</a> </abbr
+              >.
+            </li>
+          </ol>
+          <!-- 
+          <aside>: A complementary/tangential section related to the main content.
+          Use for sidebars, notes, related links, callouts, ads, glossaries.
+          Treat it as “extra context,” not the primary story.
+          If you have multiple, add an accessible name (e.g., aria-label="Profile notes").
+          -->
+
+          <!-- 
+          <details>: A built-in disclosure widget (collapsible area).
+          Great for FAQs, “read more…”, extra examples.
+          Opens/closes without JS; add the boolean attribute `open` to make it expanded by default.
+          Keyboard and screen-reader accessible when used with <summary>.
+          -->
+
+          <!-- 
+          <summary>: The clickable label for a <details> block.
+          Must be the first child of <details>.
+          Acts like a toggle button; keep it short and descriptive.
+          Can contain inline content (text, <strong>, <a>, etc.).
+          -->
+
+          <!-- 
+            <mark>: treat it as marker that highlights your point
+          -->
+
+          <!-- 
+            <time>: provide meaning towards actual time part in the sentence
+            Ex <time datetime"3:00"> means 3 a.m.
+            Ex <time datetime"PT3H"> means 3 hours in duration
+          -->
+          <aside>
+            <details>
+              <summary>
+                Guess the <mark>number of hours</mark> I code per day
+              </summary>
+              <p>
+                I start code at <time datetime="00:00">12 p.m</time> to
+                <time datetime="03:00">3 a.m., which is</time>
+                <time datetime="PT3H">3 hours</time>
+                per day
+              </p>
+            </details>
+          </aside>
+          <br />
+          <!--<Table>: I want to define a table inside -->
+          <!--<tr>: (table row) row of elements-->
+          <!--<th>: (table head) is a child tag of tr used to define field attribute-->
+          <!--<td>: child of tr column content of this table row-->
+          <!--<thead><tbody><tfoot>: does nothing, but gives insight of your table.-->
+          <table>
+            <caption>
+              My Daily Schedule
+            </caption>
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th scope="col">Time</th>
+                <!--Add scope attr to represent is this data represent as what in the table-->
+                <th scope="col">Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" id="MidNight">MidNight</th>
+                <td>
+                  <time datetime="00:00">12 p.m.</time>-<time datetime="03:00"
+                    >3 a.m.</time
+                  >
+                </td>
+                <td>Write code</td>
+              </tr>
+              <tr>
+                <th scope="row">LateNight</th>
+                <td>
+                  <time datetime="03:00">3 a.m.</time>-<time datetime="08:00"
+                    >8 a.m.</time
+                  >
+                </td>
+                <td>Sleeping</td>
+              </tr>
+              <tr>
+                <th scope="row">Morning</th>
+                <td>
+                  <time datetime="08:00">8 a.m.</time>-<time datetime="00:00"
+                    >12 a.m.</time
+                  >
+                </td>
+                <td>Play games</td>
+              </tr>
+              <!-- 
+              A data take two column of the table, but the table is 2 col.
+              Use colspan="2" to say that this data takes up two col spaces.
+             -->
+              <tr>
+                <th rowspan="2" scope="row">Evening or Night</th>
+                <td rowspan="2">All Other times</td>
+                <td>Learn Coding</td>
+              </tr>
+              <tr>
+                <td>Eating</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">And that's what i do every day</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </article>
+
+      <hr />
+      <!-- use tagName*number to perform multiple times tagName proccess-->
+      <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+     -->
+
+      <article id="MyVacationPlan">
+        <h2>I am also planning on vacation</h2>
+        <p>
+          I've been working har and
+          <!-- em: Emphesis(italic) word make it more outstanding-->
+          <em>really need a getaway</em>
+        </p>
+        <p>...</p>
+        <section id="I-Like-to-Visit">
+          <h3>Place I'd Like to Visit</h3>
+          <!-- ul: unorder list instead of number we got symbol as bullet.-->
+          <ul>
+            <li>
+              <p>I've heard good things about Caribbean</p>
+              <!--loading="lazy"： keep good performance for your web page it only shows up, when html known user scroll to that section-->
+              <!--figure: use figure tag to warp image and put related caption with it-->
+              <figure>
+                <img
+                  src="img/The-Caribbean-Island.jpg"
+                  alt="Caribbean island"
+                  title="I want to visit a Caribbean island"
+                  width="400"
+                  height="225"
+                  loading="lazy"
+                />
+
+                <figcaption>Caribbean Beach Getaway</figcaption>
+              </figure>
+            </li>
+            <li>
+              <p>I have heard good things about here:</p>
+              <!-- address: inputing address -->
+              <address>
+                台灣台北市信義區信義路五段7號
+                <br />
+                806台灣高雄市前鎮區中華五路789號
+              </address>
+              <figure>
+                <img
+                  src="img/下載.jpg"
+                  alt="Taiwan 101"
+                  loading="lazy"
+                  width="400"
+                  height="800"
+                />
+                <figcaption>Taiwan 101 View</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </section>
+
+        <section id="I-Dont-Like-to-Visit">
+          <h4>Place I'd Like to Avoid</h4>
+          <p>
+            Cold places.
+            <!--Strong(Bold): Also make it more appealing-->
+            <strong>No way!</strong>
+          </p>
+          <!-- dt: description terms, offen say as the description coresponding topic.-->
+          <!-- dl: description list, a list of description terms-->
+          <!-- dd: description definition, a plain text that provides the description-->
+          <dl>
+            <dt>North Pole</dt>
+            <dd>I hear this is <strong>cold</strong>!</dd>
+
+            <dt>South Pole</dt>
+            <dd>This is also cold</dd>
+
+            <dt>Moutain Tops</dt>
+            <dd>These are also cold.</dd>
+          </dl>
+          <hr />
+
+          <article id="contact">
+            <h2>Contact Me</h2>
+            <p>I'd really like to hear from you!</p>
+
+            <form action="https://httpbin.org/get" method="get">
+              <fieldset>
+                <p>
+                  <!--Use label for a field identification and the context-->
+                  <label for="firstName">First Name:</label>
+                  <!--
+                    Server is sendout "name", "id" is for html, "placeholder" let you put ghost example text, autocomplete let history recommend input, "required" when field is empty is not summitable, "autofocus" when it loads to the input field cursor auto focus on that field
+                  -->
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="Yuan"
+                    autocomplete="on"
+                    required
+                    autofocus
+                  />
+                </p>
+                <p>
+                  <label for="lastName">Last Name:</label>
+                  <!--
+                    Server is sendout "name", "id" is for html, "placeholder" let you put ghost example text, autocomplete let history recommend input, "required" when field is empty is not summitable, "autofocus" when it loads to the input field cursor auto focus on that field
+                  -->
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="lim"
+                    autocomplete="on"
+                    required
+                  />
+                </p>
+                <p>
+                  <label for="password">Password:</label>
+                  <!--
+                    type password will behave like password input, input box that hides what user input
+                  -->
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="your secrect"
+                    required
+                  />
+                </p>
+                <p>
+                  <label for="phone">Phone:</label>
+                  <!--
+                    Inputing phone number by using "tel" to input type, and the pattern attr tells the input constraint
+                    Ex: [0-9]{3} number 0 to 9 expected to start 3 digits
+                  -->
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="5555555555"
+                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                    required
+                  />
+                </p>
+                <p>
+                  <label for="decade">Favorite decade:</label>
+                  <!--
+                    Inputing number only, but also use "min" "max" to set the range of accepted value. 
+                    Used "step" to set constraint on how value should increament by when click increase, not flow in between.
+                    "value" for text box initial value.
+                  -->
+                  <input
+                    type="number"
+                    name="decade"
+                    id="decade"
+                    value="2010"
+                    min="2000"
+                    max="2025"
+                    step="10"
+                  />
+                </p>
+                <p>
+                  <label for="coffee">Favorite Coffee:</label>
+                  <!--<select>: defining a group selection of things, use "multiple" and "size" for the exact value, if you meant for user to select multiple-->
+                  <!--<option>: defining select option, use "selected" to defualt a specific option-->
+                  <!--<optgroup>: is used to organize group of options-->
+                  <select name="coffee" id="coffee" multiple size="5">
+                    <optgroup label="Coffee">
+                      <option value="regular coffee">Regular Coffee</option>
+                      <option value="iced coffee">Iced Coffee</option>
+                      <option value="dark coffee">Dark Coffee</option>
+                    </optgroup>
+                    <optgroup label="Espresso Drinks">
+                      <option value="latte" selected>Latte</option>
+                      <option value="cortado">Cortado</option>
+                      <option value="americano">Americano</option>
+                    </optgroup>
+                    <option value="other">Other</option>
+                  </select>
+                </p>
+                <!--
+                  Alternative use datalist instead of select let your user type to filter out selection
+                -->
+                <p>
+                  <label for="coffees">Favorite Coffee:</label>
+                  <input
+                    type="text"
+                    name="coffees"
+                    id="coffees"
+                    list="coffee-list"
+                  />
+                  <datalist id="coffee-list">
+                    <option value="regular coffee"></option>
+                    <option value="iced coffee"></option>
+                    <option value="dark coffee"></option>
+                    <option value="latte"></option>
+                    <option value="cortado"></option>
+                    <option value="americano"></option>
+                    <option value="other"></option>
+                  </datalist>
+                </p>
+              </fieldset>
+              <br />
+              <fieldset>
+                <legend>What is your favorite food?</legend>
+                <!--type Radio gives dot selection-->
+                <!--name must be same group, so that one could only be choose-->
+                <p>
+                  <input type="radio" name="food" id="wings" value="wings" />
+                  <label for="wings">wings</label>
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="food"
+                    id="noodles"
+                    value="noodles"
+                  />
+                  <label for="noodles">noodles</label>
+                </p>
+                <p>
+                  <input
+                    type="radio"
+                    name="food"
+                    id="hot-pot"
+                    value="hot pot"
+                  />
+                  <label for="hot-pot">hot pot</label>
+                </p>
+              </fieldset>
+              <fieldset>
+                <legend>What is your favorite pet?</legend>
+                <p>
+                  <input type="checkbox" name="pet" id="dog" value="dog" />
+                  <label for="dog">Dog</label>
+                </p>
+                <p>
+                  <input type="checkbox" name="pet" id="cat" value="cat" />
+                  <label for="cat">Cat</label>
+                </p>
+                <p>
+                  <input
+                    type="checkbox"
+                    name="pet"
+                    id="turtle"
+                    value="turtle"
+                  />
+                  <label for="turtle">Turtle</label>
+                </p>
+                <p>
+                  <input
+                    type="checkbox"
+                    name="pet"
+                    id="otherPet"
+                    value="otherPet"
+                  />
+                  <label for="otherPet">Other</label>
+                </p>
+              </fieldset>
+              <fieldset>
+                <!--<Textarea> a place that can let users write things, many things-->
+                <label for="message">Send me a message?</label>
+                <br />
+                <!--cols and rows let you set the size-->
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="10"
+                  placeholder="Type your message here."
+                ></textarea>
+                <br />
+                <button type="submit">Submit</button>
+                <button
+                  type="submit"
+                  formaction="https://httpbin.org/post"
+                  formmethod="post"
+                >
+                  Post
+                </button>
+                <button type="reset">Reset</button>
+              </fieldset>
+            </form>
+          </article>
+        </section>
+      </article>
+    </main>
+
+    <!-- &lt: put less than symbol on display-->
+    <!-- &gt: put greater than symbol on display-->
+    <!-- &copy: put copyright symbol on display-->
+    <!-- footer: an end to the page usually use to redirect users to other page -->
+    <footer>
+      &lt;&lt;&lt; &copy;<a href="about.html">Yuan</a> &gt;&gt;&gt;
+      <p>
+        <a href="#"> back to top </a>
+      </p>
+    </footer>
+  </body>
+</html>

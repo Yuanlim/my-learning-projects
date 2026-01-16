@@ -1,0 +1,44 @@
+/* Using selector * changes everthing with this propreties */
+* {
+  font-family: monospace;
+}
+
+body {
+  font-size: 22px;
+  border: 5px solid black; /* apply only one boarder through everything within the body. * applys individually by means a lot of boarders.*/
+}
+
+/*apply multiple at the same time using ,*/
+/* important: without comma h1 h2 css is looking for an h2 who is nested with h1 is not an error.*/
+h1, h2 {
+    color: blue;
+}
+
+p {
+  color: purple;
+}
+
+p {
+  color: blue;
+}
+/* this p css was looked last so the changes overwrite with this*/
+p {
+  color: red;
+}
+
+/* Define classes for independent assign, and reuseable */
+/* use class attribute with grayBold without the "." in an html tag to assign the propreties */
+/* Important: This apply is priority higher than html tag assign propreties*/
+/*Use this often*/
+.grayBold {
+  color: gray;
+  font-weight: bold;
+}
+
+/* Assigning css propreties an html tag that has id, using #{id name}*/
+/* Not good practice*/
+#article3 {
+  font-size: 50px;
+  font-style: italic;
+  color: burlywood;
+}

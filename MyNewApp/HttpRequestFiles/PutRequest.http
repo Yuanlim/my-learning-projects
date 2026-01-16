@@ -1,0 +1,20 @@
+PUT http://localhost:5198/games/1
+Content-Type: application/json
+
+{
+    "name": "Street Fighter",
+    "genreId": 1,
+    "price": 50,
+    "releasedate": "2011-09-22"
+}
+
+###
+PUT http://localhost:5198/advanceGamesData/1
+Content-Type: application/json
+
+{
+    "name": "Dark Souls",
+    "genre": "Souls like",
+    "price": 50,
+    "date": "2011-09-22"
+}

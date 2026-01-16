@@ -1,0 +1,49 @@
+/*external reference fonts.google.com to style your word*/
+/*import needs to be top of the css*/
+@import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
+
+/* 
+  Typography is the way that text is arranged and presented
+*/
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+}
+
+/*inherit parent font size*/
+/* input, button {
+  font: inherit; 
+} */
+
+p {
+  text-decoration: underline; /* underline the text*/
+  text-decoration: overline; /* put a line on top of the text*/
+  text-decoration: line-through; /* cancel the text*/
+  text-decoration: none; /* used for links, because defualts underline it. This resets it */
+  text-transform: lowercase; /* putting every word as lowercase*/
+  text-transform: uppercase; /* putting every word as uppercase*/
+  text-transform: capitalize; /* putting every first letter as uppercase */
+  text-align: left; /* like microsoft word align text to the left */
+  text-align: right; /* like microsoft word align text to the right */
+  text-align: justify; /* research paper style both left right align*/
+  text-indent: 2em; /* paragraph indention*/
+  line-height: 1.5; /* line distance */
+  letter-spacing: 0.25em; /* space out latter */
+  word-spacing: 0.1em; /* space out each word */
+  font-weight: normal; /* defualt normal*/
+  font-style: italic; /* tilt the word */ 
+  font-style: oblique; /* stronger italic */
+  font-family: serif; /* new paper font*/
+  font-family: sans-serif; /* more on web pages */
+  font-family: monospace;
+  font-family: cursive;
+  font-family: fantasy; /* letter spacing recommended*/
+  font-family: 'Courier New', Courier, monospace; /* if courier new wasnt install, it looked for courier then monospace*/
+  font-family: Arial, Helvetica, sans-serif; /*often*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-family: "Momo Signature", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,11 @@
+// get server todos content
+GET http://localhost:5198/todos
+
+###
+GET http://localhost:5198/tasks/1
+
+###
+GET http://localhost:5198/games/1
+
+###
+GET http://localhost:5198/advanceGamesData/4

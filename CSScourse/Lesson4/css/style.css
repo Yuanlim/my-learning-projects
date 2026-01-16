@@ -1,0 +1,28 @@
+/* 
+px: pixel. 
+%: used on tag shown in ratio of the page
+rem: step within the font size + parent properties
+em: its own element size
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+header {
+  border: 2px dashed red;
+  width: 50%;
+  padding: 0.5em;
+}
+
+h1 {
+  font-size: 3rem;
+  width: 50%; /* header is parent of h1, so 50% again 50% only has 25% to show content */
+  padding: 0.5em;
+}
+
+p {
+  font-size: 1.5rem; /* browser defualt is 16px, 2 rem is 32px*/
+  width: 50%
+}

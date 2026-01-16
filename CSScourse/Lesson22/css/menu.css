@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --HEADER-BGCOLOR: #333;
+    --HEADER-COLOR: whitesmoke;
+}
+
+html {
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+}
+
+.header-title-line {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.menu-button {
+    /* display: inline; */
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.menu-icon,
+.menu-icon::after,
+.menu-icon::before {
+    background-color: var(--HEADER-COLOR);
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.menu-icon::after,
+.menu-icon::before {
+    content: "";
+}
+
+.menu-icon::after {
+    transform: translate(-20px, -15px);
+}
+
+.menu-icon::before {
+    transform: translate(-20px, 15px);
+}
+
+:is(header:hover, header:focus-within) .menu-icon::after {
+    transform: translate(-20px, 0) rotateZ(45deg);
+}
+
+:is(header:hover, header:focus-within) .menu-icon {
+    background-color: transparent;
+}
+
+:is(header:hover, header:focus-within) .menu-icon::before {
+    transform: translate(-20px, 0) rotateZ(-45deg);
+}
+
+nav li {
+    padding: 0.5rem;
+    border-top: 2px solid white;
+}
+
+nav a{
+    margin: auto;
+    width: 80%;
+    display: block;
+    color: var(--HEADER-COLOR);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: red;
+    filter: brightness(120%);
+    transform: scale(1.2);
+}
+
+:is(header:hover, header:focus-within) nav {
+    display: block;
+}
+
+nav {
+    background-color: var(--HEADER-BGCOLOR);
+    display: none;
+    transform-origin: top center;
+    animation-name: showMenu;
+    animation-duration: 0.5s;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(1.2);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+
+
+
+
+
+
+

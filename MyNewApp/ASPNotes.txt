@@ -1,0 +1,18 @@
+DbContext = your app’s connection to the DB + the list of tables it uses.
+
+DbSet<T> = a table (e.g., DbSet<Game> = Games table).
+
+Entity class (Game, Genre) = the table’s columns.
+
+OnModelCreating = where you define table rules: primary keys, foreign keys (relations), column sizes, etc.
+
+HasData = seed initial rows.
+
+Migration = EF generates a SQL change script for your table changes.
+
+DbContextOptions = connection settings (provider + connection string).
+
+Scoped = one DbContext per web request.
+
+// Seeding
+dotnet ef migrations add SeedGenres --output-dir Data\Migrations

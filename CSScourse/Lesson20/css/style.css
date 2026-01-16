@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/*
+:root inherit by all element and commonly used to declared global variable.
+*/
+:root {
+  /*Color*/
+  --M-BGC: #475569;
+  --BGC-RADIAL: #475569;
+  --C-LIGHT: whitesmoke;
+  --H-F-BGC: #1e293b;
+  --N-BGC: #fff;
+  --DRAK-C: #000;
+
+  /*Font*/
+  --FONT-F: "Nunito", sans-serif;
+  --FONT-S: 1.5rem;
+
+  /*card*/
+  --CARD-W-H: 200px;
+  --CARD-FONT-S: 3rem;
+  --CARD-BORDER-R: 15px;
+  --CARD-BGC: papayawhip;
+
+  /*General*/
+  --BOX-SHADOW: 3px 4px 6px 2px var(--DRAK-C);
+  --BORDER: 2px solid var(--DRAK-C);
+}
+
+/*Dark mode setup*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --M-BGC: #4a4d50;
+    --BGC-RADIAL: #313134;
+    --H-F-BGC: #2c3141;
+    --N-BGC: #704c4c;
+    --DRAK-C: #321d1d;
+    --CARD-BGC: rgb(130, 86, 151); 
+  }
+}
+
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+body {
+  font: var(--FONT-S) var(--FONT-F);
+  min-height: 100vh;
+
+  background-color: var(--M-BGC);
+  background-image: radial-gradient(var(--C-LIGHT), var(--BGC-RADIAL));
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav,
+footer {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+header,
+footer {
+  position: sticky;
+  background-color: var(--H-F-BGC);
+  color: var(--C-LIGHT);
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  box-shadow: var(--BOX-SHADOW);
+}
+
+nav {
+  background-color: var(--N-BGC);
+  color: var(--DRAK-C);
+  padding: 0.5rem;
+  border-bottom: var(--BORDER);
+}
+
+.card {
+  font-size: var(--CARD-FONT-S);
+  width: var(--CARD-W-H);
+  height: var(--CARD-W-H);
+  display: grid;
+  place-content: center;
+  border: var(--BORDER);
+  border-radius: var(--CARD-BORDER-R);
+  background-color: var(--CARD-BGC);
+  box-shadow: var(--BOX-SHADOW);
+}
+
+/*overwrite only one variable*/
+.standout {
+  background-color: blueviolet;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1em;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+footer {
+  bottom: 0;
+}

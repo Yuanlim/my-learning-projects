@@ -1,0 +1,25 @@
+// Post request
+POST http://localhost:5198/todos
+// setting up what type of data, will be recieved
+Content-Type: application/json 
+
+// todos type
+{
+    "id": 1,
+    "name": "test2",
+    "dueDate": "2025-08-31",
+    "isCompleted": false
+}
+
+###
+POST http://localhost:5198/games
+// setting up what type of data, will be recieved
+Content-Type: application/json 
+
+// game type
+{   
+    "name": "test1",
+    "genreId": 5,
+    "price": 20,
+    "ReleaseDate": "2000-02-01"
+}

@@ -1,0 +1,16 @@
+Post http://localhost:5095/Chat/Post
+Content-Type: application/json
+
+{
+    "ToUserId" : 1,
+    "Content" : "He said if you are late, you are going to be in trouble"
+}
+
+###
+Post http://localhost:5095/Chat/Get/
+Content-Type: application/json
+
+{
+    "OthersId" : 1,
+    "LastMessageId" : 0
+}

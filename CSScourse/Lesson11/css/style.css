@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+ font-size: 1.5rem;
+ font-family: "Bitcount Grid Single";
+ font-weight: bold;
+}
+
+.block {
+  width: 30vw; /* fixed width, % dynamicly adjust*/
+  height: 30vw;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+}
+
+/* 
+float: can makes your content wraps according to the floating items sizes.
+clear: makes a separation, when float item is way too big. Use clear on top of the tag. Makes the tag starts after the float item.
+*/
+
+.left {
+  float: left;
+  margin-right: 1rem; /* seperate word from floating items*/
+}
+
+.right {
+  float: right;
+  margin-left: 1rem; /* seperate word from floating items*/
+}
+
+.clear {
+  clear: both;
+}
+
+section {
+  background-color: bisque;
+  padding: 1rem; /* up until this point the floating item is not include in the background */
+  display: flow-root; /* includes float item when consider */
+}
+
+
+
+

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  display: grid;
+  place-content: center;
+}
+
+.square:first-child {
+  background-color: blueviolet;
+  /* transform: translateX(-50px) skewX(5deg) rotateX(180deg); */
+}
+
+.square:nth-child(2) {
+  background-color: yellow;
+  /* transform: translateY(-60px) skewY(5deg) rotateY(180deg); */
+}
+
+.square:last-child {
+  background-color: aquamarine;
+  /* transform: translate(-100px, -110px) rotateZ(20deg); */
+  /* z-index: -1; */
+}
+
+.animate {
+  /* 
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  */
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* animation-direction: alternate; */
+  /* animation-fill-mode: both; */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(600px) rotateY(180deg);
+  }
+
+  66% {
+    transform: translateX(-600px) rotateY(-180deg);
+  }
+
+  100% {
+    transform: translateX(0);
+    background-color: papayawhip;
+  }
+}

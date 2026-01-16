@@ -1,0 +1,9 @@
+POST http://localhost:5095/Commom/Block/2
+###
+POST http://localhost:5095/Commom/Relation
+Content-Type: application/json
+
+{
+    "ReceiverId" : 1,
+    "StatusIds" : 1
+}

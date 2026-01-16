@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ font-size: 2rem;
+ font-family: "Bitcount Grid Single";
+ font-weight: bold;
+}
+
+p {
+  background-color: lightgray;
+}
+
+.opposite {
+  background-color: #333;
+  color: whitesmoke;
+  margin: 10px; /* wont apply because is inline*/
+  display: inline-block; /* now see it ask block element, influence the block changes*/
+  padding: 4rem;
+}
+
+ul {
+  background-color: black;
+  padding: 0.5rem;
+  text-align: right;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ font-size: 1.5rem;
+ font-family: "Bitcount Grid Single";
+ font-weight: bold;
+ min-height: 200vh;
+}
+
+.outer-container {
+  border: 3px dashed #000;
+  width: 75vw;
+  height: 85vh;
+  margin: 40px auto;
+  position: relative;
+}
+
+.inner-container {
+  border: 2px solid #00f;
+  width: 40vw;
+  height: 50vh;
+  margin: 200px auto;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  padding: 1rem;
+}
+
+.absolute {
+  background-color: black;
+  position: absolute; /* allocate relative to the closest grandparent, that is position relative. If not exist, relative to the broswer window. */
+  top: 40px;
+  left: 30px;
+  z-index: 1; /* shown priority */
+}
+
+.relative {
+  background-color: #00f;
+  position: relative; /* going with the closest parent html tag */
+  top: 10px;
+  left: 20px;
+}
+
+.fixed {
+  background-color: green;
+  position: fixed; /* always stay on screen on specific location */
+  top: 0;
+  left: 0;
+}
+
+.sticky {
+  background-color: red;
+  position: sticky; /* element will follow scrolling until at the end of the container*/
+  top: 0;
+  left: 0;
+}
+
+
+
+
