@@ -42,7 +42,10 @@ const Chat = () => {
       if (isFetchingRef.current) return; // Busy
 
       isFetchingRef.current = true;
-      await handleClickPerson({ OthersId: OthersUserId, LastMessageId: lastMessageIdRef.current }, OthersId)
+      await handleClickPerson({
+        OthersId: OthersUserId,
+        LastMessageId: lastMessageIdRef.current
+      }, OthersId)
       isFetchingRef.current = false;
     }, 2000);
 

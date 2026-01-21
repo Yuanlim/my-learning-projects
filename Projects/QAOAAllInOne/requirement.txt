@@ -1,0 +1,11 @@
+!pip install qiskit
+!pip install pylatexenc
+!pip install matplotlib
+!pip install pillow
+!pip install qiskit-aer
+!pip install networkx
+!pip install scipy
+!pip install sklearn
+!pip install scikit-optimize
+!pip install array_to_latex
+!pip install k_means_constrained

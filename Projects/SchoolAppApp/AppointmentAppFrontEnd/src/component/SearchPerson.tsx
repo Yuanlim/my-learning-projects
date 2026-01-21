@@ -7,7 +7,7 @@ import { BlockRequestPayload, PersonDataType, StatusRequestPayload } from '../ty
 
 type Props = {
   personInfo: PersonDataType | null,
-  handleRequest: (payload: StatusRequestPayload | BlockRequestPayload) => Promise<void>;
+  handleRequest: (payload: StatusRequestPayload | BlockRequestPayload) => Promise<boolean>;
 }
 
 const SearchPerson = ({ personInfo, handleRequest }: Props) => {
