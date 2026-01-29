@@ -7,6 +7,7 @@ import ShowPoints from "./component/ShowPoints";
 import { setPrompText } from "./redux/generic";
 import { LoadInCart, LoadInPoints } from "./redux/shopping";
 import ShowCart from "./component/ShowCart";
+import "../src/shopping.css";
 
 function Shopping() {
   useCheckDirectAccessor();

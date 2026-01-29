@@ -8,6 +8,9 @@ import { setPrompText } from './redux/generic';
 import ShowMessage from './component/ShowMessage';
 import { FiSend } from "react-icons/fi";
 import { ChatMessage, GetChatPayload, PostChatPayload, ResponseChatMessage } from './types/Chat';
+import { TfiAlignJustify } from 'react-icons/tfi';
+import useWindowSize from './hooks/useWindowSize';
+import "../src/chat.css";
 
 const Chat = () => {
   useCheckDirectAccessor();
@@ -16,6 +19,8 @@ const Chat = () => {
   const [lastMessageId, setLastMessageId] = useState<number>(0);
   const [currentReadId, setCurrentReadId] = useState<string | undefined>(undefined);
   const [currentReadUserId, setCurrentReadUserId] = useState<number | undefined>(undefined);
+  const [expandAddressBook, setExpandAddressBook] = useState<boolean>(false);
+  const { width } = useWindowSize();
   const lastMessageIdRef = useRef<number>(0);
   const currentReadIdRef = useRef<string | undefined>(undefined);
   const currentReadUserIdRef = useRef<number | undefined>(undefined);
@@ -53,10 +58,6 @@ const Chat = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useLayoutEffect(() => {
-
-  // }, [set]);
-
   const handleClickPerson = async (payload: GetChatPayload, stringId: string) => {
     const URL = `Chat/Get`
     const { data, success } = await fetchData<GetChatPayload, ResponseChatMessage>(
@@ -89,19 +90,26 @@ const Chat = () => {
   }
 
   return (
-    <main className='main card' style={{ width: "100%", height: "80vh" }}>
+    <main className='main card' style={{ width: "100%", height: "auto" }}>
       {/* Address book */}
-      <div style={{ justifyContent: "flex-start", border: "2px white solid", overflow: "auto" }}>
+      <div className='ChatAddressBook'
+        style={{ display: width > 500 || expandAddressBook ? "block" : "none" }}
+      >
         {acceptedState.length > 0 && acceptedState.map(p =>
           <ShowPerson from='Chat' r={p} handleClickPerson={handleClickPerson} key={p.userId} />)
         }
         {acceptedState.length === 0 && "Add a friend to appear here."}
       </div>
       {/* Main content */}
-      <div className="flex" style={{ flexGrow: "1", position: "relative", flexDirection: "column" }}>
+      <div className="flex MessageDisplayer">
         {/* Show selected person id */}
-        <div style={{ padding: "1rem", position: "sticky", top: 0, height: "60px" }}>
-          {currentReadId}
+        <div className='MessageDisplayerTop'>
+          <TfiAlignJustify
+            className='ExpandAddressBook asButton'
+            style={{ display: width < 500 ? "block" : "none" }}
+            onClick={() => setExpandAddressBook(!expandAddressBook)}
+          />
+          <p>{currentReadId}</p>
         </div>
         {/* chat room */}
         <section
@@ -111,24 +119,22 @@ const Chat = () => {
           }}
         >
           {/* chat boxes */}
-          {chatMessages && chatMessages.map(m =>
-            <ShowMessage key={"Chat" + m.postDateTime} chatMessage={m} />
-          )}
+          {!expandAddressBook && Array.isArray(chatMessages) &&
+            chatMessages.map(m =>
+              <ShowMessage key={"Chat" + m.postDateTime} chatMessage={m} />
+            )}
         </section>
         {/* chat input && send */}
-        <div className="flex"
-          style={{ padding: "1rem", position: "sticky", bottom: 0, height: "60px", gap: "10px" }}
-        >
+        <div className="flex ChatInputAndSendContainer">
           <input
+            className='ChatInputBox'
             type="text" name="userChatInput" id="userChatInput"
             value={sendText}
-            style={{ backgroundColor: "#555", borderRadius: "30px", color: "white", paddingLeft: "20px" }}
             onChange={(e) => setSendText(e.target.value)}
           />
           <button
             type='button'
-            className='withTip'
-            style={{ backgroundColor: "transparent", padding: 0, border: "none" }}
+            className='withTip ChatSendButton'
             onClick={() => {
               handleClickSend({ ToUserId: currentReadUserId, Content: sendText })
             }}
