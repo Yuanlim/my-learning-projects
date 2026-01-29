@@ -1,0 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-image: linear-gradient(to bottom, whiteSmoke, #ada8a8);
+  min-height: 100vh;
+  display: flex;
+  font-family: monospace;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  max-width: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 3px solid black;
+}
+
+#root,
+body {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  place-content: center;
+}
+
+.Header,
+.Footer {
+  background-color: aqua;
+  padding-top: 0.5rem;
+  /* position: sticky;
+  top: 0; */
+}
+
+.header__h1 {
+  /* padding-right: 200px; */
+  white-space: nowrap;
+}
+
+.nav {
+  width: 100%;
+  background-color: #333;
+}
+
+.nav__form {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.form__searchBox__container {
+  width: 50%;
+}
+
+.form__button__container {
+  width: 50%;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.SearchBox {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: inherit;
+  box-shadow: 1px 1px 2px black;
+}
+
+.form__button {
+  display: block;        
+  padding: 0.5rem 0;
+  color:whitesmoke;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  text-decoration: none; 
+  cursor: pointer;
+}
+
+.post {
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid #333;
+}
+
+.post__title,
+.post__date {
+  margin-bottom: 1.5rem;
+}
+
+.post__postLink {
+  text-decoration: none;
+  color: black;
+}
+
+.main {
+  font-size: 1.5rem;
+  background-color: white;
+  padding: 0.5rem;
+  flex-grow: 1;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.form__button:hover {
+  display: block;
+  color: #333;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.form__button:hover .button__link {
+  color: #333;
+}
+
+.Footer {
+  bottom: 0;
+  padding: 0.5rem 0;
+  display: grid;
+  place-content: center;
+}
+
+.deleteButton,
+.postButton,
+.editButton {
+  height: 30px;
+  width: 50px;
+  color: white;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.header__title__container {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleIcon {
+  height: 2rem;
+  width: auto;
+}
+
+.deleteButton,
+.postButton {
+  background-color: red;
+}
+
+.editButton {
+  background-color: #333;
+  margin-right: 0.5rem;
+}
+
+label,
+textarea {
+  display: block;
+  font-size: 2rem;
+}
+
+.form__textarea {
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+@media (max-width: 432px) {
+  .nav__form {
+    flex-direction: column;
+  }
+
+  .form__searchBox__container,
+  .form__button__container {
+    width: 100%;
+  }
+}
