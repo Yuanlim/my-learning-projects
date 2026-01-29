@@ -39,6 +39,7 @@ builder.Services.AddScoped<IProductListClasses, ProductListClasses>();
 builder.Services.AddScoped<IOrderItemList, OrderItemListClasses>();
 builder.Services.AddScoped<IOrderStatus, GetStatus>();
 builder.Services.AddScoped<IGetCart, GetCartHandler>();
+builder.Services.AddScoped<IGetCartItem, GetCartItemHandler>();
 builder.Services.AddScoped<IGetUserId, GetUserId>();
 builder.Services.AddScoped<IGetUser, GetUserService>();
 builder.Services.AddScoped<IGetPost, GetPost>();

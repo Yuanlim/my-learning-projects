@@ -63,7 +63,7 @@ public static class MyCart
       HttpContext hc,
       CancellationToken ct,
       UnAuthorizedValidator validator,
-      GetCartItemHandler cartItemHandler,
+      IGetCartItem cartItemHandler,
       MyAppDbContext dbContext
     ) =>
     {
@@ -112,7 +112,7 @@ public static class MyCart
       HttpContext hc,
       CancellationToken ct,
       UnAuthorizedValidator validator,
-      GetCartItemHandler cartItemHandler,
+      IGetCartItem cartItemHandler,
       IProductListClasses productHandler,
       MyAppDbContext dbContext
     ) =>

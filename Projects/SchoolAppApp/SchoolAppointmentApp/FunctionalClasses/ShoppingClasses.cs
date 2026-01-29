@@ -39,13 +39,13 @@ public interface IGetCart
 	public IQueryable<Cart> GetCartQueryAsync(
 		Teacher teacher,
 		CancellationToken cancellationToken,
-		bool AsTracking = false
+		bool AsNoTracking = false
 	);
 
 	public IQueryable<Cart> GetCartQueryAsync(
-		ClaimsPrincipal user,
+		ClaimsPrincipal claimsPrincipal,
 		CancellationToken cancellationToken,
-		bool AsTracking = false
+		bool AsNoTracking = false
 	);
 }
 
@@ -223,10 +223,10 @@ internal sealed class GetCartHandler(MyAppDbContext dbContext)
 }
 
 
-internal sealed class GetCartItemHandler(MyAppDbContext dbContext, GetCartHandler cartHandler)
+internal sealed class GetCartItemHandler(MyAppDbContext dbContext, IGetCart cartHandler)
 		: DataBaseService(dbContext), IGetCartItem
 {
-	private readonly GetCartHandler _cartHandler = cartHandler;
+	private readonly IGetCart _cartHandler = cartHandler;
 	/// <summary>
 	/// 	Get teacher's cart item query with Teacher obj or ClaimsPriciple obj
 	/// </summary>
