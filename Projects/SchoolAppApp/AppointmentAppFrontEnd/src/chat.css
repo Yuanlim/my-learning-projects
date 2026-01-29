@@ -1,0 +1,76 @@
+/* ////////////////// CHAT STYLE //////////////// */
+
+.ChatBox {
+  background-color: #555;
+  border-radius: 30px;
+  height: fit-content;
+  width: fit-content;
+  max-width: 300px;
+  white-space: wrap;
+  padding: 10px;
+}
+
+.chatSendIcon {
+  cursor: pointer;
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.ChatAddressBook {
+  flex: 0 0 350px;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  border: 2px white solid;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* right: 10%; */
+}
+
+.MessageDisplayer {
+  flex-grow: 1;
+  position: relative;
+  flex-direction: column;
+}
+
+.MessageDisplayerTop {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  height: 70px;
+  gap: 1rem;
+}
+
+.ExpandAddressBook {
+  height: 100%;
+  width: auto;
+  padding: 5px;
+  border: 2px white solid;
+  border-radius: 5px;
+}
+
+.ChatInputAndSendContainer {
+  padding: 1rem;
+  position: sticky;
+  bottom: 0;
+  height: 60px;
+  gap: 10px;
+}
+
+.ChatInputBox {
+  background-color: #555;
+  border-radius: 30px;
+  color: white;
+  padding-left: 20px;
+}
+
+.ChatSendButton {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* ///////////////////////////////////////////// */

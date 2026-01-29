@@ -114,6 +114,7 @@ body,
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
+  max-height: 100vh;
   background-image: linear-gradient(to bottom, whitesmoke, rgb(112, 196, 218));
   width: 100%;
   font-size: 1.5rem;
@@ -302,145 +303,33 @@ body,
 
 /* ///////////////////////////////////////////// */
 
-/* ////////////////// CHAT STYLE //////////////// */
+/* ////////////////// Show Person STYLE //////////////// */
 
-.ChatBox {
-  background-color: #555;
-  border-radius: 30px;
-  height: fit-content;
-  width: fit-content;
-  max-width: 300px;
-  white-space: wrap;
+.ShowPersonContainer {
+  margin: 20px;
+  border: 2px solid white;
+  height: auto;
+  width: 300px;
+}
+
+.EachPersonContainer {
   padding: 10px;
+  gap: 40px;
 }
 
-.chatSendIcon {
-  cursor: pointer;
-  color: white;
-  width: 30px;
-  height: 30px;
+.UserIconOuter {
+  background-color: whitesmoke;
+  border-radius: 50%;
+  padding: 15px
 }
 
-/* ///////////////////////////////////////////// */
-
-/* ////////////////// SHOPPING STYLE //////////////// */
-
-.shoppingContainer {
-  display: grid;
-  grid-auto-rows: auto;
-  grid-auto-columns: max-content;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
-  padding: 20px;
-  justify-content: center;
-}
-
-.shoppingShowPointContainer {
-  justify-content: "space-between";
-  padding: "10px";
-}
-
-.productPageTopContainer {
-  border-bottom: 2px solid #222;
-  height: 30%;
-}
-
-.productInfoContainer {
-  padding: 20px;
-}
-
-.productPageImg {
-  padding: 30px;
-  background-color: #555;
-  width: auto;
-}
-
-.productPageBottomContainer {
-  flex-direction: column;
-  padding: 10px;
-  width: 100%;
+.UserIcon {
+  width: 50px;
   height: auto;
 }
 
-.productPageButton {
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-.addCartButton {
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  color: white;
-}
-
-.showCartBackground {
-  display: flex;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: #2222227a;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  z-index: 100000000;
-}
-
-.showCartContainer {
-  display: flex;
-  background-color: #333;
-  width: clamp(375px, 80vw, 800px);
-  height: 100vh;
-  flex-direction: column;
-}
-
-.showCartTopBar {
-  display: flex;
-  justify-content: end;
-  height: 30px;
-}
-
-.showCartExitButton {
-  height: 30px;
-  width: auto;
-}
-
-.showCartExitButton:hover {
-  background-color: red;
-}
-
-.showProductContainer {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
-.showCartImgBg {
-  width: 150px;
-  padding: 30px;
-  background-color: #555;
-  border-radius: 20px;
-}
-
-.showCartImg {
-  height: auto;
-  width: 100%;
-}
-
-.placeOrderContainer {
-  gap: 50px;
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  margin-top: 10px;
-  border: 2px solid wheat;
-}
-
-.placeOrderButton {
-  background-color: greenyellow;
-  font-weight: bold;
+.PersonInfoText {
+  align-content: center;
 }
 
 /* ///////////////////////////////////////////// */
@@ -449,15 +338,6 @@ body,
 
   .role__change__container {
     gap: 30px;
-  }
-
-  .header {
-    display: block;
-    height: auto;
-  }
-
-  .title__nav {
-    border-top: 2px solid white;
   }
 
   .login__form {
@@ -493,6 +373,37 @@ body,
     height: 25%;
   }
 
+  .ChatAddressBook {
+    flex: 0 0 auto;
+  }
+
+  .ShowPersonContainer {
+    margin: 10px;
+    border: 2px solid white;
+    height: auto;
+    width: 250px;
+  }
+
+  .EachPersonContainer {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .UserIconOuter {
+    background-color: whitesmoke;
+    border-radius: 50%;
+    padding: 15px
+  }
+
+  .UserIcon {
+    width: 40px;
+    height: auto;
+  }
+
+  .PersonInfoText {
+    font-size: 1.2rem;
+  }
+
 }
 
 @media (max-width: 550px) {
@@ -504,5 +415,23 @@ body,
   .totalCostLabel,
   .placeOrderButton {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1235px) {
+  .header {
+    display: block;
+    height: auto;
+  }
+
+  .title__nav {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+}
+
+@media (min-width: 430px) {
+  .WelcomeUserText::before {
+    content: "Hi! ";
   }
 }
