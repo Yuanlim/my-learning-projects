@@ -19,13 +19,8 @@ function ShowPerson({ from, r, handleClickPerson }: Props) {
   const { handleRequest } = useAddFriend();
 
   return (
-    <div style={{ margin: "20px", border: "2px solid white", height: "auto" }}>
-      <div className='flex'
-        style={{
-          padding: "10px",
-          gap: "40px",
-          cursor: 'pointer'
-        }}
+    <div className='ShowPersonContainer'>
+      <div className='flex EachPersonContainer asButton'
         role='button'
         onClick={() =>
           handleClickPerson !== undefined ? handleClickPerson({
@@ -33,16 +28,14 @@ function ShowPerson({ from, r, handleClickPerson }: Props) {
           }, r.id) : setExpand(!expand)
         }
       >
-        <div
-          style={{ backgroundColor: "whitesmoke", borderRadius: "50%", padding: "15px" }}
-        >
+        <div className='UserIconOuter'>
           <img
-            style={{ width: "50px", height: "auto" }}
+            className='UserIcon'
             src={wheat}
             alt="profilePic"
           />
         </div>
-        <div style={{ alignContent: "center" }}><p>Id:{r.id}</p><p>Name:{r.name}</p></div>
+        <div className="PersonInfoText"><p>Id:{r.id}</p><p>Name:{r.name}</p></div>
       </div>
       {from !== "Chat" && <div style={{
         height: "50px",

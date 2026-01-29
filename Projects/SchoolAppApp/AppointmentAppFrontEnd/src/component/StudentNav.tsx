@@ -28,7 +28,7 @@ const StudentNav = () => {
         </span>
       </Link>
       <Link role="button" to="/Self">
-        {"Hi! " + loginState.id}
+        <p className="WelcomeUserText">{loginState.id}</p>
       </Link>
     </nav>
   );
