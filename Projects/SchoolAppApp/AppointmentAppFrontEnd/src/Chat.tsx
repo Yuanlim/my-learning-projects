@@ -90,13 +90,20 @@ const Chat = () => {
   }
 
   return (
-    <main className='main card' style={{ width: "100%", height: "auto" }}>
+    <main className='main card' style={{ width: "100%", height: "80vh" }}>
       {/* Address book */}
       <div className='ChatAddressBook'
-        style={{ display: width > 500 || expandAddressBook ? "block" : "none" }}
+        style={{ display: width > 650 || expandAddressBook ? "block" : "none" }}
       >
         {acceptedState.length > 0 && acceptedState.map(p =>
-          <ShowPerson from='Chat' r={p} handleClickPerson={handleClickPerson} key={p.userId} />)
+          <ShowPerson
+            key={p.userId}
+            from='Chat'
+            r={p}
+            handleClickPerson={handleClickPerson}
+            setExpandAddressBook={setExpandAddressBook}
+            lastMessageId={lastMessageId}
+          />)
         }
         {acceptedState.length === 0 && "Add a friend to appear here."}
       </div>
@@ -106,7 +113,7 @@ const Chat = () => {
         <div className='MessageDisplayerTop'>
           <TfiAlignJustify
             className='ExpandAddressBook asButton'
-            style={{ display: width < 500 ? "block" : "none" }}
+            style={{ display: width <= 650 ? "block" : "none" }}
             onClick={() => setExpandAddressBook(!expandAddressBook)}
           />
           <p>{currentReadId}</p>

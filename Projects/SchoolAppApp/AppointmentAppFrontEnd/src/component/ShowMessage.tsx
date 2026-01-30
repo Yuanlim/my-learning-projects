@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { toDate } from '../Community';
 import { ChatMessage } from '../types/Chat';
 
@@ -7,15 +7,15 @@ type Props = {
 }
 
 function ShowMessage({ chatMessage }: Props) {
-  const ChatBoxAlignHandler = (ISended: boolean): React.CSSProperties => {
-    console.log(ISended);
-    let leftOrRight: "left" | "right" = "right";
-    if (ISended) leftOrRight = "left";
-    return {
-      justifyItems: leftOrRight,
-      padding: "20px"
-    }
-  }
+  const ChatBoxAlignHandler = useCallback(
+    (ISended: boolean): React.CSSProperties => {
+      let leftOrRight: "left" | "right" = "right";
+      if (ISended) leftOrRight = "left";
+      return {
+        justifyItems: leftOrRight,
+        padding: "20px"
+      }
+    }, [])
 
   return (
     <div style={ChatBoxAlignHandler(chatMessage.iSended)}>

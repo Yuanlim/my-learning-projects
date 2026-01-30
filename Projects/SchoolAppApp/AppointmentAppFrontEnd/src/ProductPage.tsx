@@ -23,7 +23,10 @@ function ProductPage() {
     if (buyingAmount === 0) return dispatch(setPrompText("No Quantity was added"));
 
     try {
-      dispatch(AddWishList({ productId: Number(id), quantity: buyingAmount }))
+      const result = await dispatch(AddWishList({ productId: Number(id), quantity: buyingAmount })).unwrap()
+
+      // Prompt to tell user successful
+      if (result.success) dispatch(setPrompText("Successfully added to cart"));
     } catch (error) {
       if (error as { errorMessage: string } !== undefined)
         dispatch(setPrompText((error as { errorMessage: string }).errorMessage))
@@ -87,7 +90,13 @@ function ProductPage() {
                   setBuyingAmount(buyingAmount - 1)
                 }}
               />
-              <p>{buyingAmount}</p>
+              <input
+                className='buyingAmountInput'
+                type="number"
+                name="" id=""
+                value={buyingAmount}
+                onChange={() => setBuyingAmount(buyingAmount)}
+              />
               <FiPlusCircle
                 role="button"
                 className='asButton'

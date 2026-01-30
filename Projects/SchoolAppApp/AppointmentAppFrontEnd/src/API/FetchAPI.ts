@@ -2,7 +2,7 @@ import { API_URL } from "../App";
 
 export type FetchDataType<P> = {
   URL: string;
-  method: "get" | "post" | "put" | "delete";
+  method: "get" | "post" | "put" | "delete" | "patch";
   credentials: boolean;
   payload?: P;
 };

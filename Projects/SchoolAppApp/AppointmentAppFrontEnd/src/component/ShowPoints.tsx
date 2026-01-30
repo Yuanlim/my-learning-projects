@@ -31,6 +31,7 @@ const ShowPoints = ({ setShowCart }: Props) => {
             Check order
           </span>
         </div>
+        {/* Check Cart Button */}
         <div
           className='contextCenter asButton withTip'
           onClick={() => {

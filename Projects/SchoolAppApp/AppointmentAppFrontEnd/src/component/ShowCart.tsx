@@ -1,13 +1,32 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { RxCross2 } from "react-icons/rx";
 import { useAppDispatch, useAppSelector } from '../hooks/useReduxHook';
-import { PlaceOrder } from '../redux/shopping';
+import { LoadInPoints, PlaceOrder, setEmptyCart } from '../redux/shopping';
+import { setPrompText } from '../redux/generic';
 
 type Props = { setShowCart: Dispatch<SetStateAction<boolean>> }
 
 const ShowCart = ({ setShowCart }: Props) => {
   const { cartInfo } = useAppSelector((state) => state.shopping);
   const dispatch = useAppDispatch();
+
+  const PlaceHandler = async (): Promise<void> => {
+    try {
+      // Place order
+      const result = await dispatch(PlaceOrder()).unwrap();
+      // Cart to empty
+      if (result.success) {
+        dispatch(setEmptyCart());
+        dispatch(LoadInPoints());
+      }
+      // Exit cart window
+      setShowCart(false);
+    } catch (error) {
+      const err = error as { errorMessage: string }
+      dispatch(setPrompText(err.errorMessage));
+      userAndInputReset();
+    }
+  }
 
   return (
     <div className='showCartBackground'>
@@ -41,8 +60,8 @@ const ShowCart = ({ setShowCart }: Props) => {
           <h4 className='totalCostLabel'>Total Cost: {cartInfo.totalCost}</h4>
           <button
             className='placeOrderButton'
-            onClick={() => {
-              dispatch(PlaceOrder());
+            onClick={async () => {
+              await PlaceHandler()
             }}
           >
             Place Order
@@ -54,3 +73,7 @@ const ShowCart = ({ setShowCart }: Props) => {
 }
 
 export default ShowCart
+
+function userAndInputReset() {
+  throw new Error('Function not implemented.');
+}

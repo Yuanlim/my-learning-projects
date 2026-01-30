@@ -19,6 +19,7 @@ export type WishListReturn = {
 }
 
 export type CartItemType = {
+  productId: number;
   productName: string;
   productImageRoot: string;
   quantity: number;

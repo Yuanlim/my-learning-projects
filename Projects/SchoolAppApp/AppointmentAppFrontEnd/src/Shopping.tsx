@@ -41,7 +41,6 @@ function Shopping() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
   return (
     <main
       className='main card'
@@ -62,6 +61,24 @@ function Shopping() {
             overflowY: "auto"
           }}
         >
+          {products.map(p =>
+            <ShowProduct p={p} key={p.productId} />
+          )}
+          {products.map(p =>
+            <ShowProduct p={p} key={p.productId} />
+          )}
+          {products.map(p =>
+            <ShowProduct p={p} key={p.productId} />
+          )}
+          {products.map(p =>
+            <ShowProduct p={p} key={p.productId} />
+          )}
+          {products.map(p =>
+            <ShowProduct p={p} key={p.productId} />
+          )}
+          {products.map(p =>
+            <ShowProduct p={p} key={p.productId} />
+          )}
           {products.map(p =>
             <ShowProduct p={p} key={p.productId} />
           )}
