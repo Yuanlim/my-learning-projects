@@ -1,0 +1,405 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* In common design element */
+:any-link {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+button {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+select,
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid rgb(63, 128, 182);
+  font-size: inherit;
+  height: 40px;
+}
+
+input,
+button {
+  font-size: inherit;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  background-color: #333;
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+
+.contextCenter {
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip {
+  position: absolute;
+  display: block;
+  white-space: nowrap;
+  visibility: hidden;
+  background-color: #555;
+  color: white;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.tooltip.up {
+  bottom: calc(100% + 8px);
+}
+
+.tooltip.right {
+  right: calc(100% + 8px);
+}
+
+.tooltip.left {
+  left: calc(100% + 8px);
+}
+
+.tooltip.down {
+  top: calc(100% + 8px);
+}
+
+.withTip {
+  position: relative;
+  display: inline-flex;
+}
+
+.withTip:focus-visible :is(.tooltip.up, .tooltip.right, .tooltip.down, .tooltip.left),
+.withTip:hover :is(.tooltip.up, .tooltip.right, .tooltip.down, .tooltip.left) {
+  visibility: visible;
+}
+
+.asButton {
+  cursor: pointer;
+}
+
+/* Parameters */
+:root {
+  /* BackGround */
+  --Header-bgc: #333;
+  --Login-form-bgc: #333;
+
+  /* Font */
+  --Header-font-color: whitesmoke;
+  --Font-large: 1.5rem;
+  --Font-medium: 1.2rem;
+
+  /* Padding*/
+  --Padding-top-bottom: 0.75rem;
+  --Padding-left-right: 0.5rem;
+  --Padding-equal: 0.5rem;
+}
+
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, whitesmoke, rgb(112, 196, 218));
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: monospace;
+  align-items: center;
+}
+
+/*/////////////////// CONTENT STYLE //////////////////*/
+
+/* Fills up remaining pages and make only main content scrollable */
+.main {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* /////////////////////////////////////////////////// */
+
+/*////////// TOP and BOTTOM BAR STYLE /////////*/
+
+/* Expand with the child element lenght and styling*/
+.header,
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: #333;
+  color: whitesmoke;
+  text-align: center;
+  position: sticky;
+  z-index: 10;
+}
+
+/* Retain top bar at top, keep component distribute the same length*/
+.header {
+  display: grid;
+  /* Title ErrorPrompt Nav*/
+  grid-template-columns: repeat(3, 1fr);
+  top: 0;
+}
+
+/* Retain top bar at bottom */
+.footer {
+  bottom: 0;
+}
+
+/* Make sure container element are not block so they stay same line*/
+.web__title__container,
+.title__nav,
+.header_container_with_icon {
+  display: flex;
+  align-items: center;
+}
+
+.title__nav {
+  justify-content: space-around;
+  gap: 10px;
+}
+
+/* Nav title behaviour: could make it universally the same */
+.title__nav :hover {
+  background-color: white;
+  color: #333;
+}
+
+/* fit to content: make it resolution the same */
+.header__icon {
+  height: auto;
+  width: auto;
+}
+
+/* //////////////////////////////////////////// */
+
+/* ///////////////////// LoR STYLE ///////////////////// */
+
+/* LoR container: Component distibuted + styling */
+/* Position relative: as for child component that use absolute position to start from this container */
+.login__form {
+  align-items: center;
+  width: clamp(300px, 80vw, 600px);
+  height: clamp(300px, 80vw, 600px);
+  background-color: #555;
+  border-radius: 20px;
+}
+
+.login__container {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 0 0.5rem;
+  text-align: center;
+  justify-content: space-around;
+  color: whitesmoke;
+  position: relative;
+}
+
+/* New line between component*/
+.LoR__label,
+.LoR__input,
+.class__selector,
+.login__button {
+  display: block;
+  width: 100%;
+}
+
+.login__button {
+  width: auto;
+}
+
+.role__change__container,
+.registerInput_container,
+.loginInput_container,
+.login__button {
+  margin: 20px;
+}
+
+.LoR__input,
+.login__button,
+.class__selector {
+  margin-top: 0.5rem;
+}
+
+/* Distribute role button + add some space between them*/
+.role__change__container {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.role__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  font-size: var(--Font-medium);
+  border-radius: 50%;
+}
+
+/* ///////////////////////////////////////////// */
+
+/* ////////////////// COMMUNITY STYLE //////////////// */
+
+.MainPost__container,
+.Reply__container,
+.PostPost__container,
+.SearchPost__container,
+.ReplyPost__container {
+  border-bottom: 2px solid white;
+  padding: 5px;
+}
+
+.PostPost__container,
+.SearchPost__container,
+.ReplyPost__container,
+.gap {
+  gap: 5px;
+}
+
+.Reply__container {
+  padding: 30px 30px 5px 30px;
+}
+
+/* ///////////////////////////////////////////// */
+
+/* ////////////////// FRIEND PAGE STYLE //////////////// */
+.FriendPage__Main {
+  flex-direction: column;
+  width: clamp(350px, 80vw, 800px);
+  margin: 10px;
+  gap: 40px;
+}
+
+.FriendPage__Button {
+  background-color: #555;
+  flex-grow: 1;
+  border-radius: 30px;
+}
+
+.Accept__Button {
+  color: red;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
+/* ///////////////////////////////////////////// */
+
+/* ////////////////// Show Person STYLE //////////////// */
+
+.ShowPersonContainer {
+  margin: 20px;
+  border: 2px solid white;
+  height: auto;
+  width: 300px;
+}
+
+.EachPersonContainer {
+  padding: 10px;
+  gap: 40px;
+}
+
+.UserIconOuter {
+  background-color: whitesmoke;
+  border-radius: 50%;
+  padding: 15px
+}
+
+.UserIcon {
+  width: 50px;
+  height: auto;
+}
+
+.PersonInfoText {
+  align-content: center;
+}
+
+/* ///////////////////////////////////////////// */
+
+@media (max-width: 900px) {
+
+  .role__change__container {
+    gap: 30px;
+  }
+
+  .login__form {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .registerInput_container,
+  .loginInput_container,
+  .login__button {
+    margin: 10px;
+  }
+
+  .role__change__container {
+    gap: 10px;
+  }
+
+  .productInfoContainer {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .productPageImg {
+    padding: 20px;
+  }
+
+  .productPageTopContainer {
+    height: 25%;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .placeOrderContainer {
+    gap: 20px
+  }
+
+  .totalCostLabel,
+  .placeOrderButton {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1235px) {
+  .header {
+    display: block;
+    height: auto;
+  }
+
+  .title__nav {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+}
+
+@media (min-width: 430px) {
+  .WelcomeUserText::before {
+    content: "Hi! ";
+  }
+}

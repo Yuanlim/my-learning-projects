@@ -1,0 +1,135 @@
+/* ////////////////// SHOPPING STYLE //////////////// */
+
+.shoppingContainer {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-auto-columns: max-content;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+}
+
+.shoppingShowPointContainer {
+  justify-content: "space-between";
+  padding: "10px";
+}
+
+.productPageTopContainer {
+  border-bottom: 2px solid #222;
+  height: 30%;
+}
+
+.productInfoContainer {
+  padding: 20px;
+}
+
+.productPageImg {
+  padding: 30px;
+  background-color: #555;
+  width: auto;
+}
+
+.productPageBottomContainer {
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.productPageButton {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.addCartButton {
+  padding-left: 10px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: white;
+}
+
+.showCartBackground {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #2222227a;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  z-index: 100000000;
+}
+
+.showCartContainer {
+  display: flex;
+  background-color: #333;
+  width: clamp(375px, 80vw, 800px);
+  height: 100vh;
+  flex-direction: column;
+}
+
+.showCartTopBar {
+  display: flex;
+  justify-content: end;
+  height: 30px;
+}
+
+.showCartExitButton {
+  height: 30px;
+  width: auto;
+}
+
+.showCartExitButton:hover {
+  background-color: red;
+}
+
+.showProductContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.showCartImgBg {
+  width: 150px;
+  padding: 30px;
+  background-color: #555;
+  border-radius: 20px;
+}
+
+.showCartImg {
+  height: auto;
+  width: 100%;
+}
+
+.placeOrderContainer {
+  gap: 50px;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid wheat;
+}
+
+.placeOrderButton {
+  background-color: greenyellow;
+  font-weight: bold;
+}
+
+.buyingAmountInput {
+  width: 20%;
+  background-color: transparent;
+  border-bottom: none;
+  color: white;
+  text-align: center;
+}
+
+/* https://stackoverflow.com/questions/75879418/how-to-remove-arrows-in-input-type-number-inside-the-input */
+.buyingAmountInput::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+/* ///////////////////////////////////////////// */
