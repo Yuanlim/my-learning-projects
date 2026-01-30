@@ -36,6 +36,7 @@ public record OrderItemDto
 
 public record CartItemDto
 (
+	int ProductId,
 	string ProductName,
 	string ProductImageRoot,
 	int Quantity,

@@ -57,8 +57,7 @@ public static class Shopping
 				);
 
 
-			Product? product = await dbContext.Products.AsNoTracking()
-																								.FirstOrDefaultAsync(
+			Product? product = await dbContext.Products.FirstOrDefaultAsync(
 																									p => p.ProductId == dto.ProductId,
 																									ct
 																								);
@@ -67,7 +66,6 @@ public static class Shopping
 						title: "I dont exist issue",
 						message: "Product doesn't exist",
 						hc: hc
-
 					);
 
 			if (product.AvailableQuantity < dto.Quantity)

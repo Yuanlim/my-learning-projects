@@ -64,6 +64,7 @@ public static class ShopMapping
 
     public static CartItemDto ToCartItemDto(this CartItem cartItem)
     => new(
+            ProductId: cartItem.Product.ProductId,
             ProductName: cartItem.Product.ProductName,
             ProductImageRoot: cartItem.Product.ProductImageRoot,
             Quantity: cartItem.Quantity,
