@@ -1,0 +1,32 @@
+{
+  "characters": [
+    {
+      "id": "2",
+      "name": "Notch",
+      "attack": 50,
+      "speed": 50,
+      "isInCombat": false
+    },
+    {
+      "id": "3",
+      "name": "Alex",
+      "attack": 50,
+      "speed": 50,
+      "isInCombat": false
+    },
+    {
+      "id": "4",
+      "name": "Hello",
+      "attack": 50,
+      "speed": 50,
+      "isInCombat": true
+    },
+    {
+      "id": "5",
+      "name": "What",
+      "attack": 50,
+      "speed": 50,
+      "isInCombat": false
+    }
+  ]
+}
