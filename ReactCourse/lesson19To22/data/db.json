@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "topic": "Implementing the Pipe Operator in C# 14",
+      "content": "Inspired by one of the previous posts that created a Result monad, I decided to experiment a bit and to create an F#-like pipe operator using extension members?",
+      "postDate": "20 Dec 2025 23:11:23"
+    },
+    {
+      "id": "3",
+      "topic": "I wish",
+      "content": "To learn coding faster.",
+      "postDate": "2025/11/29 下午1:18:25"
+    }
+  ]
+}
